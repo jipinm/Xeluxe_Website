@@ -1,0 +1,136 @@
+.pageLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #000610 0%, #1a1a2e 50%, #16213e 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.pageLoader.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loaderContainer {
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.logoContainer {
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  margin-bottom: 1rem;
+  filter: brightness(1.2);
+}
+
+.brandName {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #E26A23;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.loadingAnimation {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(226, 106, 35, 0.2);
+  border-top: 3px solid #E26A23;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+.loadingText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .loaderContainer {
+    padding: 1.5rem;
+  }
+  
+  .logo {
+    height: 80px;
+  }
+  
+  .brandName {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 0.8rem;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 60px;
+  }
+  
+  .brandName {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .tagline {
+    font-size: 0.75rem;
+  }
+}

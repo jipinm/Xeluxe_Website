@@ -1,0 +1,360 @@
+.projectDetails {
+  padding: 0;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.projectDetails::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(226, 106, 35, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(226, 106, 35, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Section */
+.heroSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 6rem 0;
+  min-height: 70vh;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumbLink {
+  color: #E26A23;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #e67e22;
+}
+
+.breadcrumbSeparator {
+  color: #999;
+}
+
+.breadcrumbCurrent {
+  color: #666;
+}
+
+.projectTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+}
+
+.projectSubtitle {
+  font-size: 1.4rem;
+  color: #666666;
+  margin: 0 0 3rem 0;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: #E26A23;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(226, 106, 35, 0.3);
+}
+
+.primaryButton:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #E26A23;
+  border: 2px solid #E26A23;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.secondaryButton:hover {
+  background: #E26A23;
+  color: white;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+.heroImage {
+  position: relative;
+  z-index: 2;
+}
+
+.projectImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.projectImage:hover {
+  transform: scale(1.02);
+}
+
+/* Description Card */
+.descriptionCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 106, 35, 0.1);
+  border-radius: 25px;
+  padding: 4rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.descriptionCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(226, 106, 35, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.fullDescription {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.fullDescription h1,
+.fullDescription h2,
+.fullDescription h3,
+.fullDescription h4,
+.fullDescription h5,
+.fullDescription h6 {
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.fullDescription p {
+  margin-bottom: 1.5rem;
+}
+
+.fullDescription ul,
+.fullDescription ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.fullDescription li {
+  margin-bottom: 0.5rem;
+}
+
+.fullDescription strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* Contact CTA */
+.contactCta {
+  background: linear-gradient(135deg, #E26A23 0%, #e67e22 100%);
+  border-radius: 25px;
+  padding: 4rem;
+  margin: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.ctaDescription {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .projectTitle {
+    font-size: 3rem;
+  }
+  
+  .projectImage {
+    height: 400px;
+  }
+  
+  .descriptionCard {
+    padding: 3rem;
+  }
+  
+  .contactCta {
+    padding: 3rem;
+  }
+  
+  .ctaTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .heroSection {
+    padding: 3rem 0;
+  }
+  
+  .projectTitle {
+    font-size: 2.5rem;
+  }
+  
+  .projectSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .projectImage {
+    height: 300px;
+  }
+  
+  .descriptionCard {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .contactCta {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .ctaTitle {
+    font-size: 2rem;
+  }
+  
+  .ctaDescription {
+    font-size: 1.1rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectTitle {
+    font-size: 2rem;
+  }
+  
+  .descriptionCard {
+    padding: 1.5rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.8rem;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

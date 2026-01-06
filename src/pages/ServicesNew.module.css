@@ -1,0 +1,209 @@
+.servicesPage {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageHeader h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.pageHeader p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  min-height: 600px;
+}
+
+.tabMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.tabButton {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tabButton:hover {
+  background: rgba(226, 106, 35, 0.1);
+}
+
+.tabButton.active {
+  background: #E26A23;
+  color: white;
+}
+
+.contentArea {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceContent {
+  height: 100%;
+}
+
+.serviceHeader {
+  margin-bottom: 2rem;
+}
+
+.serviceHeader h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.serviceDescription {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.serviceImage {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.serviceImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.serviceDetails {
+  color: #444;
+  line-height: 1.8;
+}
+
+.contentText {
+  white-space: pre-line;
+}
+
+.otherServices {
+  padding: 4rem 0;
+}
+
+.otherServices h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+.otherServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.otherServiceCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.otherServiceIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(226, 106, 35, 0.1);
+  color: #E26A23;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.otherServiceCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.otherServiceCard p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    grid-template-columns: 240px 1fr;
+  }
+  
+  .otherServicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabMenu {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin: -1rem 0;
+  }
+  
+  .tabButton {
+    white-space: nowrap;
+  }
+  
+  .otherServicesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .serviceImage {
+    height: 200px;
+  }
+}

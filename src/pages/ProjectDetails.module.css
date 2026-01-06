@@ -1,0 +1,609 @@
+.projectDetailsPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+  padding: 4rem 0;
+}
+
+/* Stylish Loading Styles */
+.loadingContainer {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+  position: relative;
+}
+
+.loadingSpinner {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+}
+
+.spinnerRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-top-color: #E26A23;
+  border-radius: 50%;
+  animation: spin 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinnerRing:nth-child(1) {
+  animation-delay: -0.45s;
+  border-top-color: #E26A23;
+}
+
+.spinnerRing:nth-child(2) {
+  animation-delay: -0.3s;
+  border-top-color: #D95F1F;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+}
+
+.spinnerRing:nth-child(3) {
+  animation-delay: -0.15s;
+  border-top-color: #ffc947;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Skeleton Layout */
+.skeletonLayout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skeletonBreadcrumb {
+  width: 200px;
+  height: 20px;
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+.skeletonTitle {
+  width: 60%;
+  height: 48px;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 8px;
+}
+
+.skeletonMeta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.skeletonMetaItem {
+  width: 150px;
+  height: 24px;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+.skeletonContent {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.skeletonText {
+  width: 100%;
+  height: 18px;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+.skeletonGallery {
+  margin-bottom: 4rem;
+}
+
+.skeletonGalleryTitle {
+  width: 250px;
+  height: 36px;
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 6px;
+}
+
+.skeletonGalleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.skeletonGalleryImage {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 12px;
+}
+
+.skeletonRelated {
+  margin-top: 4rem;
+}
+
+.skeletonRelatedTitle {
+  width: 250px;
+  height: 36px;
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 6px;
+}
+
+.skeletonRelatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skeletonRelatedCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.skeletonRelatedImage {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonRelatedContent {
+  padding: 1.5rem;
+}
+
+.skeletonRelatedCardTitle {
+  width: 80%;
+  height: 24px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+.skeletonRelatedLocation {
+  width: 60%;
+  height: 18px;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+.skeletonRelatedText {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .loadingContainer {
+    padding: 2rem 1rem;
+  }
+
+  .skeletonLayout {
+    padding: 0 1rem;
+  }
+
+  .skeletonTitle {
+    width: 90%;
+  }
+
+  .skeletonContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .skeletonGalleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skeletonGalleryImage {
+    height: 150px;
+  }
+
+  .skeletonRelatedGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.projectDetailsPage :global(.container) {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumbLink {
+  color: #E26A23;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.breadcrumbLink:hover {
+  opacity: 0.8;
+}
+
+.breadcrumbSeparator {
+  color: #999;
+}
+
+.breadcrumbCurrent {
+  color: #666;
+}
+
+.projectTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.projectMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.location {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.separator {
+  color: #ccc;
+}
+
+.category {
+  color: #E26A23;
+  font-weight: 600;
+}
+
+.contentWrapper {
+  background: #fff;
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+}
+
+.contentWrapper :global(h3) {
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contentWrapper :global(p) {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.contentWrapper :global(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.gallery {
+  margin-top: 4rem;
+}
+
+.galleryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.galleryItem {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover {
+  transform: translateY(-4px);
+}
+
+.galleryImage {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Related Projects Section */
+.relatedProjects {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.relatedTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.relatedCard {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.relatedCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(226, 106, 35, 0.15);
+}
+
+.relatedCard:focus {
+  outline: 2px solid #E26A23;
+  outline-offset: 2px;
+}
+
+.relatedImageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.relatedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.relatedCard:hover .relatedImage {
+  transform: scale(1.1);
+}
+
+.relatedContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.relatedProjectTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.relatedLocation {
+  font-size: 0.9rem;
+  color: #E26A23;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.relatedDescription {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.viewProject {
+  color: #E26A23;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.relatedCard:hover .viewProject {
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .projectDetailsPage {
+    padding: 2rem 0;
+  }
+
+  .projectDetailsPage :global(.container) {
+    padding: 0 1rem;
+  }
+
+  .projectTitle {
+    font-size: 2rem;
+  }
+
+  .contentWrapper {
+    padding: 1.5rem;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .relatedProjects {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .relatedTitle {
+    font-size: 1.5rem;
+  }
+
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

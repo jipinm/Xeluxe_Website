@@ -1,0 +1,53 @@
+/* Contact Us Page Styles */
+.contactUsPage {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+}
+
+.mainContent {
+  width: 100%;
+  position: relative;
+  z-index: 1; /* Ensure content is above header */
+}
+
+/* Hero Section Placeholder (can be removed when real components are added) */
+.heroSection {
+  padding: 80px 0;
+  margin-top: 40vh; /* Position below InternalHeader */
+  background: linear-gradient(135deg, #E8EBF0 0%, #FFFFFF 100%);
+  text-align: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pageSubtitle {
+  font-size: 1.2rem;
+  color: #333333;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 60px 0;
+    margin-top: 35vh; /* Position below mobile InternalHeader */
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+}

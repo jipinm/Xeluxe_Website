@@ -1,0 +1,83 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Mail } from 'lucide-react';
+import ContactForm from '../ContactForm/ContactForm';
+import styles from './ContactUs.module.css';
+
+const ContactUs: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
+
+  return (
+    <section className={styles.contactUs}>
+      <div className={styles.container}>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className={styles.content}
+        >
+          {/* Contact Info Cards */}
+          <motion.div 
+            variants={itemVariants}
+            className={styles.contactInfo}
+          >
+            <div className={styles.contactDetails}>
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
+                  <Mail size={20} />
+                </div>
+                <div className={styles.contactContent}>
+                  <h4>General Contact</h4>
+                  <p>info@xeluxefiresafety.com</p>
+                </div>
+              </div>
+              
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
+                  <Mail size={20} />
+                </div>
+                <div className={styles.contactContent}>
+                  <h4>Your Direct Contact</h4>
+                  <p>c.ahking@xeluxefiresafety.com</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            variants={itemVariants}
+          >
+            <ContactForm />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactUs;

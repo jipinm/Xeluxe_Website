@@ -1,0 +1,151 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { serviceCategories, otherServices } from '../data/servicesData';
+import styles from './Services.module.css';
+
+const Services: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(serviceCategories[0].id);
+
+  // Animation variants for the tab buttons
+  const tabVariants = {
+    active: {
+      backgroundColor: '#F5F5F5',
+      color: '#1A1A1A',
+      fontWeight: 600,
+      transition: { duration: 0.3 }
+    },
+    inactive: {
+      backgroundColor: 'transparent',
+      color: '#666666',
+      fontWeight: 400,
+      transition: { duration: 0.3 }
+    }
+  } as const;
+
+  // Animation variants for the content area
+  const contentVariants = {
+    hidden: { 
+      opacity: 0,
+      x: 20
+    },
+    visible: { 
+      opacity: 1,
+      x: 0
+    },
+    exit: {
+      opacity: 0,
+      x: -20
+    }
+  } as const;
+
+  const activeService = serviceCategories.find(service => service.id === activeTab);
+
+  return (
+    <div className={styles.servicesPage}>
+      <section className={styles.servicesSection}>
+        <div className={styles.container}>
+          {/* Page Header */}
+          <div className={styles.pageTitle}>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Our Services
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              We provide comprehensive engineering solutions across multiple disciplines
+            </motion.p>
+          </div>
+
+          <div className={styles.servicesContainer}>
+            {/* Vertical Tab Menu */}
+            <div className={styles.tabsContainer}>
+              {serviceCategories.map((service) => (
+                <motion.button
+                  key={service.id}
+                  className={`${styles.tab} ${activeTab === service.id ? styles.tabActive : ''}`}
+                  variants={tabVariants}
+                  animate={activeTab === service.id ? 'active' : 'inactive'}
+                  onClick={() => setActiveTab(service.id)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {service.title}
+                </motion.button>
+              ))}
+            </div>
+
+            {/* Content Area */}
+            <div className={styles.contentContainer}>
+              <AnimatePresence mode="wait">
+                {activeService && (
+                  <motion.div
+                    key={activeService.id}
+                    className={styles.serviceContent}
+                    variants={contentVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                  >
+                    <h2>{activeService.title}</h2>
+                    <p>{activeService.description}</p>
+                    
+                    <img 
+                      src={activeService.image}
+                      alt={activeService.title} 
+                      className={styles.serviceImage}
+                      loading="lazy"
+                    />
+
+                    <ul className={styles.bulletPoints}>
+                      {activeService.content.split('\n')
+                        .filter(line => line.trim())
+                        .map((line, index) => (
+                          <li key={index}>{line.trim()}</li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Other Services Section */}
+          <section className={styles.otherServices}>
+            <h2>Our Expertise</h2>
+            <div className={styles.servicesGrid}>
+              {otherServices.map((service) => (
+                <motion.div
+                  key={service.id}
+                  className={styles.serviceCard}
+                  whileHover={{ y: -4 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div className={styles.cardImageContainer}>
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className={styles.cardImage} 
+                    />
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Services;

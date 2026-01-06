@@ -1,0 +1,374 @@
+.careerDetails {
+  padding: 0;
+  background: #fff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 2rem 2rem;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(226, 106, 35, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(226, 106, 35, 0.08) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.breadcrumbLink {
+  color: #E26A23;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  margin: 0 0.5rem;
+  color: #999;
+}
+
+.breadcrumbCurrent {
+  color: #666;
+}
+
+.departmentBadge {
+  display: inline-block;
+  background: rgba(226, 106, 35, 0.1);
+  color: #E26A23;
+  padding: 0.4rem 0.9rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.careerTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+.careerSubtitle {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.careerMeta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.metaItem svg {
+  color: #E26A23;
+}
+
+/* Description Card */
+.descriptionCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 106, 35, 0.1);
+  border-radius: 25px;
+  padding: 3rem;
+  margin: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.descriptionCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(226, 106, 35, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.fullDescription {
+  color: #4a5568;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.fullDescription h3 {
+  color: #1a1a1a;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+}
+
+.fullDescription p {
+  margin: 0 0 1.5rem 0;
+}
+
+.fullDescription ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.fullDescription li {
+  margin-bottom: 0.5rem;
+}
+
+/* Details Grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+}
+
+.detailCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 106, 35, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.detailCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(226, 106, 35, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.detailTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.detailList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detailList li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 2rem;
+  color: #4a5568;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detailList li:last-child {
+  border-bottom: none;
+}
+
+.detailList li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: #E26A23;
+  font-weight: bold;
+}
+
+/* Application CTA */
+.applicationCta {
+  background: linear-gradient(135deg, #E26A23 0%, #D95F1F 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.ctaDescription {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  color: #E26A23;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  color: #E26A23;
+  text-decoration: none;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background: white;
+  color: #E26A23;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 3rem 1rem;
+  }
+  
+  .careerTitle {
+    font-size: 2.5rem;
+  }
+  
+  .careerSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .careerMeta {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .descriptionCard {
+    margin: 1rem;
+    padding: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    padding: 3rem 1rem;
+  }
+  
+  .detailCard {
+    padding: 2rem;
+  }
+  
+  .applicationCta {
+    padding: 3rem 1rem;
+  }
+  
+  .ctaTitle {
+    font-size: 2rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .careerTitle {
+    font-size: 2rem;
+  }
+  
+  .descriptionCard {
+    padding: 1.5rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.8rem;
+  }
+  
+  .ctaDescription {
+    font-size: 1.1rem;
+  }
+}

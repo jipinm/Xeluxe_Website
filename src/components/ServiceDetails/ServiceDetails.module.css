@@ -1,0 +1,513 @@
+.serviceDetails {
+  padding: 0;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.serviceDetails::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(226, 106, 35, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(226, 106, 35, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Section */
+.heroSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 6rem 0;
+  min-height: 70vh;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumbLink {
+  color: #E26A23;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #e67e22;
+}
+
+.breadcrumbSeparator {
+  color: #999;
+}
+
+.breadcrumbCurrent {
+  color: #666;
+}
+
+.serviceTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+}
+
+.serviceSubtitle {
+  font-size: 1.4rem;
+  color: #666666;
+  margin: 0 0 3rem 0;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: #E26A23;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.primaryButton:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(226, 106, 35, 0.3);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #E26A23;
+  border: 2px solid #E26A23;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.secondaryButton:hover {
+  background: #E26A23;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonIcon {
+  transform: translateX(3px);
+}
+
+.heroImage {
+  position: relative;
+  z-index: 2;
+}
+
+.serviceImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Overview */
+.serviceOverview {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  margin: 2rem 0;
+}
+
+.overviewContent {
+  position: relative;
+  z-index: 2;
+}
+
+.sectionHeader {
+  text-align: left;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionLabel {
+  display: inline-block;
+  background: #E26A23;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+}
+
+.accentText {
+  color: #E26A23;
+}
+
+.sectionDescription {
+  font-size: 1.2rem;
+  color: #666666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.descriptionCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 106, 35, 0.2);
+  border-radius: 25px;
+  padding: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.fullDescription {
+  font-size: 1.2rem;
+  color: #555555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.fullDescription p {
+  margin: 0 0 1.5rem 0;
+}
+
+.fullDescription p:last-child {
+  margin-bottom: 0;
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 4rem 0;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 106, 35, 0.2);
+  border-radius: 25px;
+  padding: 3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(226, 106, 35, 0.1) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.featureCard:hover::before {
+  transform: scale(1);
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(226, 106, 35, 0.4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background: #E26A23;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardIcon {
+  color: white;
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: #444444;
+  font-size: 1rem;
+}
+
+.checkIcon {
+  color: #E26A23;
+  flex-shrink: 0;
+}
+
+/* Related Services */
+.relatedSection {
+  padding: 4rem 0;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.relatedCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 106, 35, 0.2);
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 3;
+}
+
+.relatedCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(226, 106, 35, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.relatedImage {
+  height: 200px;
+  overflow: hidden;
+}
+
+.relatedImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.relatedCard:hover .relatedImage img {
+  transform: scale(1.05);
+}
+
+.relatedContent {
+  padding: 2rem;
+}
+
+.relatedTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0 0 1rem 0;
+}
+
+.relatedDescription {
+  color: #555555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.relatedButton {
+  color: #E26A23;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.relatedCard:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Contact CTA */
+.contactCta {
+  background: rgba(226, 106, 35, 0.1);
+  border-radius: 25px;
+  padding: 4rem;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.ctaDescription {
+  font-size: 1.2rem;
+  color: #666666;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .serviceTitle {
+    font-size: 2.5rem;
+  }
+  
+  .serviceSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .ctaButtons {
+    justify-content: center;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .featureCard,
+  .descriptionCard {
+    padding: 2rem;
+  }
+  
+  .contactCta {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .serviceTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .ctaTitle {
+    font-size: 2rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
