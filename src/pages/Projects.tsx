@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import InternalHeader from '../components/InternalHeader/InternalHeader';
 import styles from './Projects.module.css';
 import { API_BASE_URL } from '../services/api';
 
@@ -112,6 +113,7 @@ const Projects: React.FC = () => {
 
   return (
     <div className={styles.projectsPage}>
+      <InternalHeader pageTitle="Our Projects" />
       <div className={styles.container}>
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>Our Projects</h1>

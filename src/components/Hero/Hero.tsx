@@ -40,6 +40,12 @@ const Hero: React.FC = () => {
 
   // Get video URL from settings or use default
   const videoUrl = settings?.hero_video_url || DEFAULT_HERO_VIDEO;
+  
+  // Extract video ID and create proper embed URL
+  const getVimeoEmbedUrl = (url: string) => {
+    const videoId = url.split('/').pop();
+    return `https://player.vimeo.com/video/${videoId}?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1`;
+  };
 
   return (
     <section ref={heroRef} id="home" className={styles.hero}>
@@ -48,7 +54,7 @@ const Hero: React.FC = () => {
         {/* Video Overlay for better text readability */}
         <div className={styles.videoOverlay}></div>
         <motion.iframe
-          src={videoUrl}
+          src={getVimeoEmbedUrl(videoUrl)}
           className={styles.backgroundVideo}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -56,6 +62,7 @@ const Hero: React.FC = () => {
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
+          title="Hero Background Video"
         />
       </div>
     </section>

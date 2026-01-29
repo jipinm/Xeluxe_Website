@@ -4,7 +4,7 @@ import { projectsApi, API_BASE_URL } from '../services/api';
 import type { ProjectDetail, RelatedProject } from '../services/api';
 import SEO from '../components/SEO/SEO';
 import type { SeoData } from '../services/api';
-// import InternalHeader from '../components/InternalHeader/InternalHeader';
+import InternalHeader from '../components/InternalHeader/InternalHeader';
 import styles from './ProjectDetails.module.css';
 
 const ProjectDetailsPage: React.FC = () => {
@@ -116,6 +116,7 @@ const ProjectDetailsPage: React.FC = () => {
   return (
     <>
       <SEO seoData={seoData} />
+      <InternalHeader pageTitle="Project" />
       <div className={styles.projectDetailsPage}>
         <div className="container">
           {/* Breadcrumb */}

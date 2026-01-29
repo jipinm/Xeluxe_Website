@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useParams } from 'react-router-dom';
+import InternalHeader from '../components/InternalHeader/InternalHeader';
 import styles from './SectorPage.module.css';
 import sectorsStyles from '../components/Sectors/Sectors.module.css';
 import { projectsApi, API_BASE_URL } from '../services/api';
@@ -128,14 +129,16 @@ const SectorPage: React.FC = () => {
 
   return (
     <div className={styles.sectorPage}>
+      <InternalHeader pageTitle="Sector" />
       {/* Use the same container/padding as Sectors for visual consistency */}
-      <div className={sectorsStyles.container}>
-        {/* Category Breadcrumb */}
-        <div className={styles.breadcrumb}>
-          <a href="/sectors" className={styles.breadcrumbLink}>Sectors</a>
-          <span className={styles.breadcrumbSeparator}>/</span>
-          <span className={styles.breadcrumbCurrent}>{sectorData.category_name}</span>
-        </div>
+      <div className={styles.contentSection}>
+        <div className={sectorsStyles.container}>
+          {/* Category Breadcrumb */}
+          <div className={styles.breadcrumb}>
+            <a href="/sectors" className={styles.breadcrumbLink}>Sectors</a>
+            <span className={styles.breadcrumbSeparator}>/</span>
+            <span className={styles.breadcrumbCurrent}>{sectorData.category_name}</span>
+          </div>
 
         {/* Row 1: Top-left -> Sector title */}
         <div className={sectorsStyles.sectionHeader}>
@@ -193,6 +196,7 @@ const SectorPage: React.FC = () => {
             ))}
             {projects.length === 0 && <p>No projects available for this sector.</p>}
           </div>
+        </div>
         </div>
       </div>
 

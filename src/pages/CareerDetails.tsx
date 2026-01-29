@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CareerDetails from '../components/CareerDetails/CareerDetails';
+import InternalHeader from '../components/InternalHeader/InternalHeader';
 import styles from './CareerDetails.module.css';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
@@ -425,7 +426,12 @@ The role offers excellent exposure to cutting-edge fire safety technologies and 
     }
   }; */
 
-  return <CareerDetails career={transformedCareer} />;
+  return (
+    <>
+      <InternalHeader pageTitle="Career" />
+      <CareerDetails career={transformedCareer} />
+    </>
+  );
 };
 
 export default CareerDetailsPage;

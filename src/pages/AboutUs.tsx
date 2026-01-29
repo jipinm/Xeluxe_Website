@@ -4,6 +4,7 @@ import VisionMissionValuesSection from '../components/VisionMissionValuesSection
 import Leadership from '../components/Leadership/Leadership';
 import { aboutUsApi } from '../services/api';
 import type { AboutUsData } from '../services/api';
+import InternalHeader from '../components/InternalHeader/InternalHeader';
 import styles from './AboutUs.module.css';
 
 const AboutUs: React.FC = () => {
@@ -93,6 +94,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <div className={styles.aboutUsPage}>
+      <InternalHeader pageTitle="About Us" />
       <main className={styles.mainContent}>
         <WhoWeAreSection data={aboutUsData.about_us} />
         <VisionMissionValuesSection 

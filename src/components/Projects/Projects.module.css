@@ -88,13 +88,25 @@
   margin-bottom: 1rem;
 }
 
+.statusMessage {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
 .projectCard {
+  display: block;
   background: white;
   border-radius: 30px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(226, 106, 35, 0.1);
   will-change: transform;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .projectCard:hover {
@@ -521,11 +533,30 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .projects {
-    padding: 80px 0;
+    padding: 60px 0;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .container {
     padding: 0 1rem;
+    display: block !important;
+  }
+  
+  .sectionHeader {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
   }
   
   .sectionTitle {
@@ -537,12 +568,48 @@
   }
   
   .projectsGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+    width: 100%;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .projectCard {
+    display: block !important;
+    width: 100%;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .statusMessage {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    grid-column: 1 / -1;
   }
   
   .cardContent {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .imageWrapper {
+    height: 180px;
+  }
+  
+  .projectName {
+    font-size: 1rem;
+  }
+  
+  .category {
+    font-size: 0.75rem;
+  }
+  
+  .location {
+    font-size: 0.85rem;
   }
   
   .featuresList {

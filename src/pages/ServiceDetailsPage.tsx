@@ -4,6 +4,7 @@ import { servicesApi, API_BASE_URL } from '../services/api';
 import type { ServiceDetail, RelatedService } from '../services/api';
 import SEO from '../components/SEO/SEO';
 import type { SeoData } from '../services/api';
+import InternalHeader from '../components/InternalHeader/InternalHeader';
 import styles from './ServiceDetails.module.css';
 
 const ServiceDetailsPage: React.FC = () => {
@@ -117,6 +118,7 @@ const ServiceDetailsPage: React.FC = () => {
   return (
     <div className={styles.serviceDetailsPage}>
       <SEO seoData={seoData} />
+      <InternalHeader pageTitle="Service" />
       <main className={styles.mainContent}>
         <div className={styles.contentWrapper}>
           <div className="container">

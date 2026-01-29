@@ -2,23 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { servicesApi } from '../services/api';
 import type { ServiceCategory } from '../services/api';
+import InternalHeader from '../components/InternalHeader/InternalHeader';
 import styles from './Services.module.css';
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 const Services: React.FC = () => {
   const [serviceCategories, setServiceCategories] = useState<ServiceCategory[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<number | null>(null);
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchServices = async () => {
       try {
         const response = await servicesApi.getServiceCategories();
         if (response.success && response.data) {
-          // Display all categories as tabs on the Services page
           setServiceCategories(response.data);
-          if (response.data.length > 0) {
-            setActiveTab(response.data[0].id);
-          }
         }
       } catch (error) {
         console.error('Failed to fetch services:', error);
@@ -30,37 +29,29 @@ const Services: React.FC = () => {
     fetchServices();
   }, []);
 
-  const tabVariants = {
-    active: {
-      backgroundColor: '#F5F5F5',
-      color: '#1A1A1A',
-      fontWeight: 600,
-      transition: { duration: 0.3 }
-    },
-    inactive: {
-      backgroundColor: 'transparent',
-      color: '#666666',
-      fontWeight: 400,
-      transition: { duration: 0.3 }
-    }
-  } as const;
+  const toggleCard = (id: number) => {
+    setExpandedCard(expandedCard === id ? null : id);
+  };
 
-  const contentVariants = {
-    hidden: { 
-      opacity: 0,
-      x: 20
-    },
-    visible: { 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
       opacity: 1,
-      x: 0
-    },
-    exit: {
-      opacity: 0,
-      x: -20
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
     }
-  } as const;
+  };
 
-  const activeCategory = serviceCategories.find(cat => cat.id === activeTab);
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
 
   if (loading) {
     return (
@@ -77,22 +68,22 @@ const Services: React.FC = () => {
               <div className={styles.skeletonTitle}></div>
               <div className={styles.skeletonSubtitle}></div>
             </div>
-            <div className={styles.skeletonServicesContainer}>
-              <div className={styles.skeletonTabs}>
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className={styles.skeletonTab}></div>
-                ))}
-              </div>
-              <div className={styles.skeletonContent}>
-                <div className={styles.skeletonContentTitle}></div>
-                <div className={styles.skeletonText}></div>
-                <div className={styles.skeletonText} style={{ width: '95%' }}></div>
-                <div className={styles.skeletonText} style={{ width: '90%' }}></div>
-                <div className={styles.skeletonListTitle}></div>
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className={styles.skeletonListItem}></div>
-                ))}
-              </div>
+            <div className={styles.skeletonCardsGrid}>
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div key={i} className={styles.skeletonCard}>
+                  <div className={styles.skeletonCardHeader}>
+                    <div className={styles.skeletonCardIcon}></div>
+                    <div className={styles.skeletonCardNumber}></div>
+                  </div>
+                  <div className={styles.skeletonCardContent}>
+                    <div className={styles.skeletonCardTitle}></div>
+                    <div className={styles.skeletonCardText}></div>
+                    <div className={styles.skeletonCardText} style={{ width: '80%' }}></div>
+                    <div className={styles.skeletonCardText} style={{ width: '60%' }}></div>
+                    <div className={styles.skeletonCardButton}></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -102,93 +93,121 @@ const Services: React.FC = () => {
 
   return (
     <div className={styles.servicesPage}>
+      <InternalHeader pageTitle="Our Services" />
       <section className={styles.servicesSection}>
         <div className={styles.container}>
           {/* Page Header */}
-          <div className={styles.pageTitle}>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
+          <div className={styles.pageHeader}>
+            <motion.div 
+              className={styles.headerContent}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7 }}
             >
-              Our Services
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              We provide comprehensive engineering solutions across multiple disciplines
-            </motion.p>
+              <span className={styles.headerTag}>What We Offer</span>
+              <h1 className={styles.headerTitle}>Our Services</h1>
+              <p className={styles.headerSubtitle}>
+                We provide comprehensive engineering solutions across multiple disciplines, 
+                delivering excellence from concept to completion.
+              </p>
+            </motion.div>
           </div>
 
-          {serviceCategories.length > 0 && (
-            <div className={styles.servicesContainer}>
-              {/* Vertical Tab Menu - Category Names */}
-              <div className={styles.tabsContainer}>
-                {serviceCategories.map((category) => (
-                  <motion.button
-                    key={category.id}
-                    className={`${styles.tab} ${activeTab === category.id ? styles.tabActive : ''}`}
-                    variants={tabVariants}
-                    animate={activeTab === category.id ? 'active' : 'inactive'}
-                    onClick={() => setActiveTab(category.id)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {category.category_name}
-                  </motion.button>
-                ))}
-              </div>
+          {/* Services Grid */}
+          <motion.div 
+            className={styles.cardsGrid}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {serviceCategories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                className={`${styles.serviceCard} ${expandedCard === category.id ? styles.serviceCardExpanded : ''}`}
+                variants={cardVariants}
+                layout
+              >
+                {/* Card Header with Icon */}
+                <div className={styles.cardHeader}>
+                  <div className={styles.cardIconWrapper}>
+                    <img 
+                      src={`${API_BASE_URL}/${category.featured_image}`}
+                      alt={category.category_name}
+                      className={styles.cardIcon}
+                    />
+                  </div>
+                  <div className={styles.cardNumber}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+                </div>
 
-              {/* Content Area - Service List */}
-              <div className={styles.contentContainer}>
-                <AnimatePresence mode="wait">
-                  {activeCategory && (
-                    <motion.div
-                      key={activeCategory.id}
-                      className={styles.serviceContent}
-                      variants={contentVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                    >
-                      <h2>{activeCategory.category_name}</h2>
-                      
-                      {activeCategory.short_description && (
-                        <div 
-                          className={styles.categoryDescription}
-                          dangerouslySetInnerHTML={{ __html: activeCategory.short_description }}
-                        />
-                      )}
-
-                      <div className={styles.servicesList}>
-                        <h3 className={styles.servicesListTitle}>Available Services:</h3>
-                        <ul className={styles.serviceItems}>
-                          {activeCategory.services.map((service) => (
-                            <motion.li 
-                              key={service.id}
-                              className={styles.serviceItem}
-                              whileHover={{ x: 8 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <a
-                                href={`/service/${service.slug}`}
-                                className={styles.serviceLink}
-                              >
-                                {service.title}
-                                <span className={styles.arrow}>→</span>
-                              </a>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </div>
-                    </motion.div>
+                {/* Card Content */}
+                <div className={styles.cardBody}>
+                  <h3 className={styles.cardTitle}>{category.category_name}</h3>
+                  
+                  {category.short_description && (
+                    <div 
+                      className={styles.cardDescription}
+                      dangerouslySetInnerHTML={{ __html: category.short_description }}
+                    />
                   )}
-                </AnimatePresence>
-              </div>
-            </div>
-          )}
+
+                  {/* Expand/Collapse Button */}
+                  <button 
+                    className={styles.expandButton}
+                    onClick={() => toggleCard(category.id)}
+                    aria-expanded={expandedCard === category.id}
+                  >
+                    <span>{expandedCard === category.id ? 'Hide Services' : `View ${category.services.length} Service${category.services.length > 1 ? 's' : ''}`}</span>
+                    <motion.svg 
+                      width="20" 
+                      height="20" 
+                      viewBox="0 0 20 20" 
+                      fill="none"
+                      animate={{ rotate: expandedCard === category.id ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </motion.svg>
+                  </button>
+
+                  {/* Expanded Services List */}
+                  <AnimatePresence>
+                    {expandedCard === category.id && (
+                      <motion.div
+                        className={styles.expandedServices}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      >
+                        <div className={styles.servicesListWrapper}>
+                          {category.services.map((service, serviceIndex) => (
+                            <motion.a
+                              key={service.id}
+                              href={`/service/${service.slug}`}
+                              className={styles.serviceListItem}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: serviceIndex * 0.05 }}
+                            >
+                              <span className={styles.serviceItemIcon}>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                  <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              </span>
+                              <span className={styles.serviceItemTitle}>{service.title}</span>
+                              <span className={styles.serviceArrow}>→</span>
+                            </motion.a>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
     </div>

@@ -81,13 +81,13 @@
 }
 
 .pageTitle {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #FFFFFF;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
   margin: 0;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-snug);
 }
 
 .container {
@@ -104,7 +104,7 @@
 }
 
 .active {
-  color: #E26A23 !important;
+  color: var(--color-brand-primary) !important;
 }
 
 .active::after {
@@ -114,7 +114,7 @@
   left: 0;
   width: 100% !important;
   height: 2px;
-  background: #E26A23;
+  background: var(--color-brand-primary);
   transition: width 0.3s ease;
 }
 
@@ -146,11 +146,11 @@
 }
 
 .tagline {
-  color: #E26A23;
-  font-size: 0.75rem;
-  font-weight: 500;
+  color: var(--color-brand-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
   text-align: left;
-  line-height: 1.2;
+  line-height: var(--line-height-snug);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   opacity: 0.9;
   align-self: flex-start;
@@ -178,10 +178,10 @@
 }
 
 .navLink {
-  color: #E26A23;
+  color: var(--color-brand-primary);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
   transition: all 0.3s ease;
   padding: 0.5rem 0;
   position: relative;

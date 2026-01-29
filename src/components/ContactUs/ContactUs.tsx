@@ -52,6 +52,20 @@ const ContactUs: React.FC = () => {
     fetchData();
   }, []);
 
+  // Handle scrolling to form section when hash is present
+  useEffect(() => {
+    if (!loading && window.location.hash === '#request-quote-form') {
+      setTimeout(() => {
+        const formElement = document.getElementById('request-quote-form');
+        if (formElement) {
+          const yOffset = -100; // Offset for fixed headers if any
+          const y = formElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 300);
+    }
+  }, [loading]);
+
   const itemVariants = {
     hidden: { 
       opacity: 0, 
@@ -137,6 +151,7 @@ const ContactUs: React.FC = () => {
 
         {/* Contact Form */}
         <motion.div 
+          id="request-quote-form"
           className={styles.formSection}
           initial="hidden"
           whileInView="visible"

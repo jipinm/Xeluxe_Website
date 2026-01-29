@@ -39,33 +39,33 @@
 
 .sectionLabel {
   display: inline-block;
-  background: #E26A23;
+  background: var(--color-brand-primary);
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1rem;
 }
 
 .sectionTitle {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #1B1B1B;
-  line-height: 1.1;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
   margin: 0 0 1.5rem 0;
 }
 
 .accentText {
-  color: #E26A23;
+  color: var(--color-brand-primary);
 }
 
 .sectionDescription {
-  font-size: 1.2rem;
-  color: #666;
-  line-height: 1.6;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-body);
+  line-height: var(--line-height-relaxed);
   margin-bottom: 3rem;
 }
 
@@ -106,22 +106,22 @@
 }
 
 .contactContent h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1B1B1B;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   margin: 0 0 0.5rem 0;
 }
 
 .contactContent p {
-  font-size: 1.1rem;
-  color: #333;
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
   margin: 0 0 0.3rem 0;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .contactContent span {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-body);
 }
 
 .quickStats {
@@ -139,16 +139,16 @@
 }
 
 .statNumber {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #E26A23;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-brand-primary);
   margin-bottom: 0.5rem;
 }
 
 .statLabel {
-  font-size: 0.9rem;
-  color: #666;
-  font-weight: 500;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-body);
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -196,22 +196,22 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1B1B1B;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   margin: 0 0 1rem 0;
 }
 
 .formIcon {
   font-size: 2.5rem;
-  color: #E26A23;
+  color: var(--color-brand-primary);
   filter: drop-shadow(0 2px 4px rgba(226, 106, 35, 0.3));
 }
 
 .formDescription {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.5;
+  font-size: var(--font-size-base);
+  color: var(--color-text-body);
+  line-height: var(--line-height-normal);
 }
 
 .formGrid {
@@ -237,9 +237,9 @@
 }
 
 .label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #333;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -253,8 +253,8 @@
   border: 2px solid rgba(226, 106, 35, 0.3);
   border-radius: 15px;
   padding: 1rem;
-  color: #333;
-  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   box-sizing: border-box;
@@ -264,14 +264,14 @@
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: #E26A23;
+  border-color: var(--color-brand-primary);
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 0 3px rgba(226, 106, 35, 0.2);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: #999;
+  color: var(--color-text-muted);
 }
 
 .select {

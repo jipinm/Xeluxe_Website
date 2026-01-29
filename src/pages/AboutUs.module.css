@@ -20,12 +20,12 @@
   justify-content: center;
   align-items: center;
   min-height: 50vh;
-  font-size: 1.125rem;
-  color: #666;
+  font-size: var(--font-size-md);
+  color: var(--color-text-body);
 }
 
 .error {
-  color: #dc2626;
+  color: var(--color-text-error);
 }
 
 /* Stylish Loading Styles */
@@ -92,9 +92,9 @@
   text-align: center;
   margin-top: 7rem;
   margin-bottom: 3rem;
-  font-size: 1.2rem;
-  color: #666;
-  font-weight: 500;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-body);
+  font-weight: var(--font-weight-medium);
   animation: pulse 2s ease-in-out infinite;
 }
 

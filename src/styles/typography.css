@@ -1,0 +1,241 @@
+/* =====================================================
+   TYPOGRAPHY SYSTEM - Xeluxe Development
+   =====================================================
+   
+   This file defines the unified typography system for
+   the entire application. All typography-related values
+   should reference these CSS custom properties.
+   
+   USAGE:
+   - font-size: var(--font-size-md);
+   - font-weight: var(--font-weight-semibold);
+   - line-height: var(--line-height-normal);
+   - color: var(--color-text-primary);
+   
+   ===================================================== */
+
+:root {
+  /* ===========================================
+     FONT FAMILY
+     =========================================== */
+  --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-heading: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* ===========================================
+     FONT SIZES - Type Scale (1.25 ratio)
+     Base: 16px = 1rem
+     =========================================== */
+  --font-size-xs: 0.75rem;      /* 12px - Fine print, captions */
+  --font-size-sm: 0.875rem;     /* 14px - Small text, labels */
+  --font-size-base: 1rem;       /* 16px - Body text */
+  --font-size-md: 1.125rem;     /* 18px - Large body text */
+  --font-size-lg: 1.25rem;      /* 20px - Lead paragraphs */
+  --font-size-xl: 1.5rem;       /* 24px - H4, subheadings */
+  --font-size-2xl: 2rem;        /* 32px - H3 */
+  --font-size-3xl: 2.5rem;      /* 40px - H2 */
+  --font-size-4xl: 3rem;        /* 48px - H1 */
+  --font-size-5xl: 3.5rem;      /* 56px - Display headings */
+  --font-size-6xl: 4rem;        /* 64px - Hero headings */
+
+  /* ===========================================
+     FONT WEIGHTS
+     =========================================== */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* ===========================================
+     LINE HEIGHTS
+     =========================================== */
+  --line-height-none: 1;
+  --line-height-tight: 1.1;     /* Hero headings */
+  --line-height-snug: 1.2;      /* Headings */
+  --line-height-normal: 1.4;    /* Subheadings, UI text */
+  --line-height-relaxed: 1.6;   /* Body text */
+  --line-height-loose: 1.8;     /* Extended reading */
+
+  /* ===========================================
+     LETTER SPACING
+     =========================================== */
+  --letter-spacing-tighter: -0.03em;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* ===========================================
+     TEXT COLORS
+     =========================================== */
+  /* Primary Text Colors */
+  --color-text-primary: #1A1A1A;      /* Main headings, titles */
+  --color-text-secondary: #333333;    /* Secondary headings */
+  --color-text-body: #666666;         /* Body text, descriptions */
+  --color-text-muted: #999999;        /* Meta text, timestamps */
+  --color-text-disabled: #CCCCCC;     /* Disabled text */
+  
+  /* Inverted Text Colors (for dark backgrounds) */
+  --color-text-inverse: #FFFFFF;
+  --color-text-inverse-secondary: rgba(255, 255, 255, 0.9);
+  --color-text-inverse-muted: rgba(255, 255, 255, 0.7);
+  
+  /* Brand/Accent Colors */
+  --color-brand-primary: #E26A23;     /* Primary orange */
+  --color-brand-hover: #C85E1F;       /* Orange hover state */
+  --color-brand-light: rgba(226, 106, 35, 0.1);
+  
+  /* Semantic Colors */
+  --color-text-error: #DC2626;
+  --color-text-success: #059669;
+  --color-text-warning: #D97706;
+  --color-text-info: #2563EB;
+
+  /* ===========================================
+     TYPOGRAPHY PRESETS
+     Common combinations for consistency
+     =========================================== */
+  
+  /* Hero Title */
+  --typography-hero-size: var(--font-size-6xl);
+  --typography-hero-weight: var(--font-weight-black);
+  --typography-hero-line-height: var(--line-height-tight);
+  --typography-hero-letter-spacing: var(--letter-spacing-tight);
+  
+  /* Page Title (H1) */
+  --typography-h1-size: var(--font-size-4xl);
+  --typography-h1-weight: var(--font-weight-extrabold);
+  --typography-h1-line-height: var(--line-height-snug);
+  --typography-h1-letter-spacing: var(--letter-spacing-tight);
+  
+  /* Section Title (H2) */
+  --typography-h2-size: var(--font-size-3xl);
+  --typography-h2-weight: var(--font-weight-bold);
+  --typography-h2-line-height: var(--line-height-snug);
+  --typography-h2-letter-spacing: var(--letter-spacing-tight);
+  
+  /* Subsection Title (H3) */
+  --typography-h3-size: var(--font-size-2xl);
+  --typography-h3-weight: var(--font-weight-bold);
+  --typography-h3-line-height: var(--line-height-snug);
+  
+  /* Card Title (H4) */
+  --typography-h4-size: var(--font-size-xl);
+  --typography-h4-weight: var(--font-weight-semibold);
+  --typography-h4-line-height: var(--line-height-normal);
+  
+  /* Small Heading (H5) */
+  --typography-h5-size: var(--font-size-lg);
+  --typography-h5-weight: var(--font-weight-semibold);
+  --typography-h5-line-height: var(--line-height-normal);
+  
+  /* Body Large */
+  --typography-body-lg-size: var(--font-size-lg);
+  --typography-body-lg-weight: var(--font-weight-normal);
+  --typography-body-lg-line-height: var(--line-height-relaxed);
+  
+  /* Body Default */
+  --typography-body-size: var(--font-size-base);
+  --typography-body-weight: var(--font-weight-normal);
+  --typography-body-line-height: var(--line-height-relaxed);
+  
+  /* Body Small */
+  --typography-body-sm-size: var(--font-size-sm);
+  --typography-body-sm-weight: var(--font-weight-normal);
+  --typography-body-sm-line-height: var(--line-height-relaxed);
+  
+  /* Caption/Label */
+  --typography-caption-size: var(--font-size-xs);
+  --typography-caption-weight: var(--font-weight-medium);
+  --typography-caption-line-height: var(--line-height-normal);
+  
+  /* Button Text */
+  --typography-button-size: var(--font-size-base);
+  --typography-button-weight: var(--font-weight-semibold);
+  --typography-button-line-height: var(--line-height-normal);
+  
+  /* Navigation Link */
+  --typography-nav-size: var(--font-size-base);
+  --typography-nav-weight: var(--font-weight-medium);
+  --typography-nav-line-height: var(--line-height-normal);
+  
+  /* Lead/Intro Paragraph */
+  --typography-lead-size: var(--font-size-lg);
+  --typography-lead-weight: var(--font-weight-normal);
+  --typography-lead-line-height: var(--line-height-relaxed);
+}
+
+/* ===========================================
+   RESPONSIVE TYPOGRAPHY ADJUSTMENTS
+   =========================================== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  :root {
+    --font-size-6xl: 3rem;        /* 48px */
+    --font-size-5xl: 2.5rem;      /* 40px */
+    --font-size-4xl: 2.25rem;     /* 36px */
+    --font-size-3xl: 2rem;        /* 32px */
+    --font-size-2xl: 1.75rem;     /* 28px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-lg: 1.125rem;     /* 18px */
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  :root {
+    --font-size-6xl: 2.5rem;      /* 40px */
+    --font-size-5xl: 2.25rem;     /* 36px */
+    --font-size-4xl: 2rem;        /* 32px */
+    --font-size-3xl: 1.75rem;     /* 28px */
+    --font-size-2xl: 1.5rem;      /* 24px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-lg: 1.125rem;     /* 18px */
+  }
+}
+
+/* ===========================================
+   UTILITY CLASSES
+   Optional: Use these for quick typography application
+   =========================================== */
+
+/* Font Sizes */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-md { font-size: var(--font-size-md); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+.text-5xl { font-size: var(--font-size-5xl); }
+.text-6xl { font-size: var(--font-size-6xl); }
+
+/* Font Weights */
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+.font-black { font-weight: var(--font-weight-black); }
+
+/* Line Heights */
+.leading-none { line-height: var(--line-height-none); }
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-snug { line-height: var(--line-height-snug); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+.leading-loose { line-height: var(--line-height-loose); }
+
+/* Text Colors */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-body { color: var(--color-text-body); }
+.text-muted { color: var(--color-text-muted); }
+.text-brand { color: var(--color-brand-primary); }
+.text-inverse { color: var(--color-text-inverse); }

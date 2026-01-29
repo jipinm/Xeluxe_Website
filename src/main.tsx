@@ -37,6 +37,7 @@ function ScrollRestoration() {
 import { SettingsProvider } from './contexts/SettingsContext'
 import { ServiceMenuProvider } from './contexts/ServiceMenuContext'
 import { ProjectMenuProvider } from './contexts/ProjectMenuContext'
+import './styles/typography.css'
 import './index.css'
 import App from './App.tsx'
 import HomePage from './pages/HomePage.tsx'

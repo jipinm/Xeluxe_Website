@@ -1,5 +1,5 @@
 .active {
-  color: #E26A23 !important;
+  color: var(--color-brand-primary) !important;
 }
 .active::after {
   content: '';
@@ -8,7 +8,7 @@
   left: 0;
   width: 100% !important;
   height: 2px;
-  background: #E26A23;
+  background: var(--color-brand-primary);
   transition: width 0.3s ease;
 }
 .header {
@@ -69,11 +69,11 @@
 }
 
 .tagline {
-  color: #E26A23;
-  font-size: 0.95rem;
-  font-weight: 500;
+  color: var(--color-brand-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
   text-align: left;
-  line-height: 1.4;
+  line-height: var(--line-height-normal);
   text-shadow: none;
   opacity: 1;
   align-self: flex-start;
@@ -104,10 +104,10 @@
 }
 
 .navLink {
-  color: #E26A23;
+  color: var(--color-brand-primary);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
   transition: all 0.3s ease;
   padding: 0.5rem 0;
   position: relative;
@@ -161,18 +161,18 @@
 .dropdownLink {
   display: block;
   padding: 0.75rem 1.5rem;
-  color: #333;
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
   transition: all 0.3s ease;
   border-left: 3px solid transparent;
 }
 
 .dropdownLink:hover {
   background: rgba(226, 106, 35, 0.1);
-  color: #E26A23;
-  border-left-color: #E26A23;
+  color: var(--color-brand-primary);
+  border-left-color: var(--color-brand-primary);
 }
 
 /* Nested dropdown styles */
@@ -255,16 +255,16 @@
 .nestedDropdownLink {
   display: block;
   padding: 0.75rem 1.5rem;
-  color: #333;
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85rem;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nestedDropdownLink:hover {
   background: rgba(226, 106, 35, 0.1);
-  color: #E26A23;
+  color: var(--color-brand-primary);
 }
 
 /* Mega menu specific styles */
@@ -273,7 +273,7 @@
 }
 
 .navLink:hover {
-  color: #E26A23;
+  color: var(--color-brand-primary);
 }
 
 .navLink::after {
@@ -283,7 +283,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #E26A23;
+  background: var(--color-brand-primary);
   transition: width 0.3s ease;
 }
 
@@ -298,13 +298,13 @@
 }
 
 .primaryBtn {
-  background: #E26A23;
+  background: var(--color-brand-primary);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(226, 106, 35, 0.3);
@@ -317,18 +317,18 @@
 
 .secondaryBtn {
   background: transparent;
-  color: #E26A23;
-  border: 2px solid #E26A23;
+  color: var(--color-brand-primary);
+  border: 2px solid var(--color-brand-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .secondaryBtn:hover {
-  background: #E26A23;
+  background: var(--color-brand-primary);
   color: white;
   transform: translateY(-2px);
 }
@@ -346,7 +346,7 @@
 .line {
   width: 25px;
   height: 3px;
-  background: #1B1B1B;
+  background: var(--color-text-primary);
   transition: all 0.3s ease;
   border-radius: 2px;
 }

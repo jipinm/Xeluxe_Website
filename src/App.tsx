@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import RequestForQuote from './components/RequestForQuote/RequestForQuote'
 import PageLoader from './components/PageLoader/PageLoader'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import SEO from './components/SEO/SEO'
@@ -55,13 +56,14 @@ function App() {
     <div className="App">
       <SEO seoData={seoData} />
       {isHomePage && isLoading && <PageLoader />}
-      <Header />
+      {isHomePage && <Header />}
       <main 
-        style={!isHomePage ? { paddingTop: '130px' } : undefined}
+        style={!isHomePage ? { paddingTop: '0px' } : undefined}
         key={location.pathname + location.search}
       >
         <Outlet />
       </main>
+      <RequestForQuote />
       <Footer />
       <ScrollToTop />
     </div>

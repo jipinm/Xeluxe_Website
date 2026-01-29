@@ -299,13 +299,37 @@
   }
   
   .sectorsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem;
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .sectorCard {
-    padding: 1.5rem 1rem;
-    height: 160px;
+    padding: 0;
+    height: auto;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .cardContent {
+    padding: 0.75rem;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .imageWrapper {
+    aspect-ratio: 1 / 1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sectorImage {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .sectorIcon {
@@ -319,7 +343,24 @@
   }
   
   .sectorName {
-    font-size: 1rem;
+    font-size: 0.9rem !important;
+    margin-top: 0.5rem !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1a1a1a !important;
+    line-height: 1.2 !important;
+  }
+  
+  .sectorDescription {
+    font-size: 0.75rem !important;
+    margin-top: 0.25rem !important;
+    display: -webkit-box !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #666 !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
   }
   
   .footerText {

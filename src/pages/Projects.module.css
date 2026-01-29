@@ -1,6 +1,6 @@
 /* Projects Page Styles */
 .projectsPage {
-  padding: 60px 0;
+  padding: 0;
   background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
   min-height: 100vh;
 }
@@ -8,7 +8,7 @@
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 60px 2rem;
 }
 
 /* Page Header */
@@ -18,19 +18,19 @@
 }
 
 .pageTitle {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .pageSubtitle {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-body);
   max-width: 700px;
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 /* Sector Section */
@@ -48,16 +48,16 @@
 }
 
 .sectorTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   margin: 0;
 }
 
 .viewSectorLink {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #E26A23;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
   text-decoration: none;
   transition: all 0.3s ease;
   display: flex;
@@ -66,7 +66,7 @@
 }
 
 .viewSectorLink:hover {
-  color: #C85E1F;
+  color: var(--color-brand-hover);
   gap: 0.75rem;
 }
 
@@ -132,15 +132,15 @@
 }
 
 .projectTitle {
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   margin: 0 0 0.25rem 0;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
 }
 
 .projectLocation {
-  color: #666;
-  font-size: 0.9rem;
+  color: var(--color-text-body);
+  font-size: var(--font-size-sm);
   margin: 0;
 }
 
@@ -196,12 +196,12 @@
 }
 
 .popupTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   margin: 0 0 1rem;
-  color: #1a1a1a;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
   padding-bottom: 0.75rem;
   border-bottom: 2px solid transparent;
   background: linear-gradient(to right, #E26A23 0%, transparent 40%) bottom left no-repeat;
@@ -209,10 +209,10 @@
 }
 
 .popupLocation {
-  font-size: 1.05rem;
-  color: #E26A23;
+  font-size: var(--font-size-base);
+  color: var(--color-brand-primary);
   margin: 0 0 1.5rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -230,22 +230,22 @@
 }
 
 .popupDescription {
-  font-size: 0.98rem;
-  color: #333;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
   margin: 0;
-  line-height: 1.75;
+  line-height: var(--line-height-loose);
   text-align: justify;
   overflow-y: visible;
   padding-right: 0;
   flex: 1;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
 }
 
 /* No Projects Message */
 .noProjects {
   text-align: center;
-  color: #666;
-  font-size: 1rem;
+  color: var(--color-text-body);
+  font-size: var(--font-size-base);
   padding: 2rem;
   background: #f5f5f5;
   border-radius: 12px;
@@ -254,8 +254,8 @@
 .noData {
   text-align: center;
   padding: 4rem 2rem;
-  color: #666;
-  font-size: 1.2rem;
+  color: var(--color-text-body);
+  font-size: var(--font-size-lg);
 }
 
 /* Loading Styles */
@@ -321,9 +321,9 @@
   text-align: center;
   margin-top: 7rem;
   margin-bottom: 3rem;
-  font-size: 1.2rem;
-  color: #666;
-  font-weight: 500;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-body);
+  font-weight: var(--font-weight-medium);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -441,11 +441,11 @@
   }
 
   .pageTitle {
-    font-size: 2rem;
+    font-size: var(--font-size-2xl);
   }
 
   .pageSubtitle {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
 
   .sectorHeader {
@@ -455,7 +455,7 @@
   }
 
   .sectorTitle {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xl);
   }
 
   .projectsGrid {
@@ -477,7 +477,7 @@
   }
 
   .popupTitle {
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
   }
 }
 

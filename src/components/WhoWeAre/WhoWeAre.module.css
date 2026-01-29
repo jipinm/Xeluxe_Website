@@ -37,18 +37,18 @@
 
 /* Consistent Title & Subtitle Styles */
 .title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1a1a1a;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: var(--line-height-snug);
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-body);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 
@@ -94,17 +94,17 @@
 }
 
 .statNumber {
-  font-size: 1.7rem;
-  font-weight: 800;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 2;
 }
 
 .statLabel {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #666;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-body);
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -117,11 +117,11 @@
 }
 
 .coreValuesTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   margin-bottom: 3rem;
-  line-height: 1.3;
+  line-height: var(--line-height-snug);
 }
 
 .valuesGrid {
@@ -196,18 +196,18 @@
 }
 
 .valueTitle {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   margin: 0 0 0.8rem 0;
-  line-height: 1.3;
+  line-height: var(--line-height-snug);
 }
 
 .valueDescription {
-  font-size: 1rem;
-  color: #666;
+  font-size: var(--font-size-base);
+  color: var(--color-text-body);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 /* Responsive Design */
@@ -233,11 +233,11 @@
   }
   
   .title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-3xl);
   }
   
   .subtitle {
-    font-size: 1.1rem;
+    font-size: var(--font-size-md);
   }
   
   .sectionHeader {
@@ -256,11 +256,11 @@
   }
   
   .statNumber {
-    font-size: 1.1rem;
+    font-size: var(--font-size-md);
   }
   
   .coreValuesTitle {
-    font-size: 1.8rem;
+    font-size: var(--font-size-xl);
     margin-bottom: 2rem;
   }
   
@@ -277,14 +277,14 @@
 
 @media (max-width: 480px) {
   .title {
-    font-size: 2rem;
+    font-size: var(--font-size-2xl);
   }
   
   .coreValuesTitle {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xl);
   }
   
   .valueTitle {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
   }
 }

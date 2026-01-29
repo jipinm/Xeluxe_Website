@@ -62,9 +62,9 @@
   text-align: center;
   margin-top: 7rem;
   margin-bottom: 3rem;
-  font-size: 1.2rem;
-  color: #666;
-  font-weight: 500;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-body);
+  font-weight: var(--font-weight-medium);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -313,12 +313,12 @@
 }
 
 .popupTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   margin: 0 0 1rem;
-  color: #1a1a1a;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
   padding-bottom: 0.75rem;
   border-bottom: 2px solid transparent;
   background: linear-gradient(to right, #E26A23 0%, transparent 40%) bottom left no-repeat;
@@ -326,10 +326,10 @@
 }
 
 .popupLocation {
-  font-size: 1.05rem;
-  color: #E26A23;
+  font-size: var(--font-size-base);
+  color: var(--color-brand-primary);
   margin: 0 0 1.5rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -343,19 +343,19 @@
 
 .popupLocation::before {
   content: '📍';
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }
 
 .popupDescription {
-  font-size: 0.98rem;
-  color: #333;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
   margin: 0;
-  line-height: 1.75;
+  line-height: var(--line-height-loose);
   text-align: justify;
   overflow-y: visible;
   padding-right: 0;
   flex: 1;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
 }
 
 .popupDescription::-webkit-scrollbar {
@@ -385,11 +385,16 @@
 
 /* Root section padding matching industrySectors */
 .sectorPage {
-  padding: 60px 0;
+  padding: 0;
   background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
   position: relative;
   z-index: 1;
   overflow: visible !important;
+}
+
+/* Content section below header */
+.contentSection {
+  padding: 60px 0;
 }
 
 /* Breadcrumb Navigation */
@@ -399,26 +404,26 @@
   gap: 8px;
   margin-bottom: 24px;
   margin-top: 20px;
-  font-size: 14px;
-  color: #666;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-body);
 }
 
 .breadcrumbLink {
-  color: #E26A23;
+  color: var(--color-brand-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .breadcrumbLink:hover {
-  color: #C85E1F;
+  color: var(--color-brand-hover);
 }
 
 .breadcrumbSeparator {
-  color: #999;
+  color: var(--color-text-muted);
 }
 
 .breadcrumbCurrent {
-  color: #333;
+  color: var(--color-text-secondary);
 }
 
 .sectors::before {
@@ -451,19 +456,19 @@
 
 .title,
 .pageTitle {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1a1a1a;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  line-height: var(--line-height-snug);
   text-align: left;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-body);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
   text-align: left;
 }
 
@@ -514,9 +519,9 @@
 .bannerInner img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .description {
-  color: #444;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
   max-width: 900px;
 }
 

@@ -57,33 +57,33 @@
 .tagline {
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-  line-height: 1.3;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-inverse-muted);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
   margin-top: 8px;
 }
 
 .logoText {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #E26A23;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-brand-primary);
   letter-spacing: -1px;
 }
 
 .logoSubtext {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-inverse-muted);
+  font-weight: var(--font-weight-medium);
   margin-top: -4px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .companyDescription {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-inverse-muted);
   margin: 0;
 }
 
@@ -109,16 +109,16 @@
 }
 
 .certText {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .sectionTitle {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
   color: white;
   margin: 0 0 1.5rem 0;
   position: relative;
@@ -131,7 +131,7 @@
   left: 0;
   width: 40px;
   height: 2px;
-  background: #E26A23;
+  background: var(--color-brand-primary);
 }
 
 .linksList {
@@ -148,10 +148,10 @@
 }
 
 .link {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-inverse-muted);
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
   transition: all 0.3s ease;
   display: block;
   padding: 0.3rem 0;
@@ -166,7 +166,7 @@
   transform: translateY(-50%);
   width: 0;
   height: 2px;
-  background: #E26A23;
+  background: var(--color-brand-primary);
   transition: width 0.3s ease;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .link:hover {
-  color: #E26A23;
+  color: var(--color-brand-primary);
   transform: translateX(0.5rem);
 }
 
@@ -210,15 +210,15 @@
 
 .contactText p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
-  line-height: 1.4;
+  color: var(--color-text-inverse-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
 }
 
 .contactNote {
-  font-size: 0.8rem;
-  color: #E26A23;
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  color: var(--color-brand-primary);
+  font-weight: var(--font-weight-medium);
 }
 
 .socialLinks {
@@ -266,7 +266,7 @@
 
 .copyright p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
 }
 
 .legalLinks {
@@ -275,14 +275,14 @@
 }
 
 .legalLink {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-inverse-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   transition: color 0.3s ease;
 }
 
 .legalLink:hover {
-  color: #E26A23;
+  color: var(--color-brand-primary);
 }
 
 .emergency {
@@ -307,9 +307,9 @@
 }
 
 .emergencyText {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #E26A23;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
   white-space: nowrap;
 }
 
